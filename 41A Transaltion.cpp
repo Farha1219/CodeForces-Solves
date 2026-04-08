@@ -1,21 +1,18 @@
 #include <iostream>
+#include<algorithm>
 using namespace std;
 
 int main() {
     string s, t;
     cin >> s >> t;
 
-    bool ok = true;
+    reverse(s.begin(),s.end());
 
-    for (int i = 0; i < s.length(); i++) {
-        if (s[i] != t[s.length() - 1 - i]) {
-            ok = false;
-            break;
-        }
-    }
+    if (s == t)
+        cout << "YES";
+    else
+        cout << "NO";
 
-    if (ok) cout << "YES";
-    else cout << "NO";
 
     return 0;
 }
